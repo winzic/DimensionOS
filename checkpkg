@@ -1,0 +1,219 @@
+#!/bin/bash
+
+# NASM package check (or)and install
+if [ -f /bin/nasm ]; then
+	echo "Package found"
+else
+	apt install nasm -y
+fi
+# VirtualBox package check (or)and install
+ if [ -f /bin/VirtualBox ] || [ -f /bin/virtualbox ]; then
+ 		echo "Package found"
+else
+		echo "Package not found but will install from repo"		
+ 		apt install linux-headers-$(uname -r) dkms -y
+ 		apt install apt install virtualbox-7.0 -y
+ 		vboxmanage -v | cut -dr -f1
+ 		usermod -aG vboxusers $USER
+ 		newgrp vboxusers
+ 		wget https://download.virtualbox.org/virtualbox/7.0.18/Oracle_VM_VirtualBox_Extension_Pack-7.0.18.vbox-extpack
+fi
+
+# KATE editor package check (or)and install
+if [ -f /usr/bin/kate ]; then
+	echo "Package found"
+else 
+	apt install kate -y
+fi
+
+# Kwrite editor package check (or)and install
+if [ -f /usr/bin/kwrite ]; then
+	echo "Package found"
+else
+	apt install kwrite -y
+fi
+#=========================================================================
+# QEMU package check (or)and install
+egrep -c '(vmx|svm)' /proc/cpuinfo
+apt install qemu-kvm qemu-system qemu-utils python3 python3-pip \
+    libvirt-clients libvirt-daemon-system bridge-utils virtinst \ 
+    libvirt-daemon virt-manager -y
+systemctl status libvirtd.service
+virsh net-start default
+virsh net-autostart default
+virsh net-list --all
+usermod -aG libvirt $USER
+usermod -aG libvirt-qemu $USER
+usermod -aG kvm $USER
+usermod -aG input $USER
+usermod -aG disk $USER
+
+#===================================================================
+# GAWK package check (or)and install
+if [ -f /usr/bin/gawk ]; then
+	echo "Package found"
+else
+	apt install gawk mawk -y
+fi
+
+#========================================================
+# SED(Stream Editor) package check (or)and install
+if [ -f /usr/bin/sed ]; then
+	echo "Package found"
+else
+	apt install sed -y
+fi
+
+#============================================================
+# Flatpak package check (or)and install
+if [ -f /usr/bin/flatpak ]; then
+	echo "Package found"
+else
+	apt install flatpak -y
+fi
+
+#============Shells======================================
+# TCSH
+if [ -f /usr/bin/tcsh ];then
+	echo "Package found"
+else
+	apt install tcsh -y
+fi
+
+# CSH
+if [ -f /usr/bin/csh ]; then
+	echo "Package found"
+else
+	apt install csh -y
+fi
+
+# 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

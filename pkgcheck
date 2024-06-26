@@ -1,0 +1,33 @@
+#!/bin/bash
+
+if  [ -f /usr/bin/nasm ]  &&  [ -f /usr/bin/as ]  
+then
+	echo "package found"
+	
+else
+	apt install nasm -y
+	apt install binutils-x86-64-linux-gnu
+fi 
+
+if [ -f /usr/bin/gcc ] && [ -f /usr/bin/clang ] ; then
+	echo "package found"
+	
+else
+	apt install gcc
+	apt install clang
+fi
+
+if [ -f /usr/bin/flatpak ]; then
+	echo "package found"
+
+else
+	apt install flatpak -y
+fi
+
+if [ -f /usr/bin/git ]; then
+	echo "Git found"
+else
+	apt install git -y
+fi
+
+ 
