@@ -1,5 +1,10 @@
 #!/bin/bash
 
+
+echo " Dimension OS is based on Debian
+			it installs packages.
+     "
+
 # NASM package check (or)and install
 if [ -f /bin/nasm ]; then
 	echo "Package found"
@@ -80,14 +85,53 @@ else
 	apt install tcsh -y
 fi
 
-# CSH
+# CSH package check (or)and install
 if [ -f /usr/bin/csh ]; then
 	echo "Package found"
 else
 	apt install csh -y
 fi
 
-# 
+# FISH package check (or)and install
+if [ -f /usr/bin/fish ]; then
+	echo "Package found"
+else
+	apt install fish -y
+fi
+
+# ZSH package check (or)and install
+if [ -f /usr/bin/zsh ]; then
+	echo "Package Found"
+else
+	apt install zsh -y
+fi
+# Dialog package check (or)and install
+if [ -f /usr/bin/dialog ]; then
+	echo "Package found"
+else
+	apt install dialog -y
+fi
+
+#===========================================================
+#============ Programming Languages ========================
+# Python 3 intepreter
+if [ -f /usr/bin/python3 ]; then
+	echo "Package found"
+else
+	apt install python3 -y
+fi
+
+#===========================================================
+#===========# Tools #=======================================
+# Xorriso
+if [ -f /usr/bin/xorriso ]; then 
+	echo "Package Found "
+else
+	apt install xorriso -y
+fi
+
+
+ 
 
 
 
